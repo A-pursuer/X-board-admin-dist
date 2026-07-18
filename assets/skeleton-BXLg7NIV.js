@@ -1,0 +1,1 @@
+import{p as e,r as t}from"./button-CxqV3gGS.js";var n=e();function r({className:e,...r}){return(0,n.jsx)(`div`,{className:t(`animate-pulse rounded-md bg-muted`,e),...r})}export{r as t};
