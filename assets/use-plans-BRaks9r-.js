@@ -1,0 +1,1 @@
+import{t as e}from"./useQuery-DzO1dKBp.js";import{n as t}from"./plan-CMILrNVE.js";function n(){return e({queryKey:[`plans`,`options`],queryFn:()=>t(1,200),staleTime:300*1e3,select:e=>(e?.data||[]).map(e=>({id:e.id,name:e.name}))})}export{n as t};

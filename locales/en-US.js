@@ -755,6 +755,7 @@
       "routeManagement": "Route Management",
       "subscriptionManagement": "Subscription",
       "planManagement": "Plan Management",
+      "subscribeProfileManagement": "Plans & Subscription Profiles",
       "orderManagement": "Order Management",
       "couponManagement": "Coupon Management",
       "giftCardManagement": "Gift Card Management",
@@ -1687,14 +1688,33 @@
         }
       }
     },
+    "subscribeProfile": {
+      "title": "Plans & Subscription Profiles",
+      "description": "Bind reusable six-client profiles to plans with safe draft, publish, and rollback workflows.",
+      "create": "New Profile",
+      "clone": "Clone Profile",
+      "system": "System Default",
+      "inheritDefault": "Inherit System Default",
+      "active": "Active",
+      "tabs": { "bindings": "Plan Bindings", "profiles": "Profile Library" },
+      "plan": { "name": "Plan", "group": "Server Group", "users": "Existing Users", "profile": "Subscription Profile" },
+      "profile": { "name": "Profile Name", "description": "Description", "version": "Published Version", "draft": "Draft", "bindings": "Bound Plans", "users": "Affected Users" },
+      "editor": { "create": "New Subscription Profile", "edit": "Edit {{name}}", "saveDraft": "Save Draft", "publish": "Publish Six Templates", "history": "Published History" },
+      "bindConfirm": { "title": "Confirm Plan Profile", "description": "Plan \u201C{{plan}}\u201D has {{users}} existing users. The change applies on their next subscription request." },
+      "deleteConfirm": { "title": "Delete Profile", "description": "Permanently delete \u201C{{name}}\u201D and all of its history. This cannot be undone." },
+      "unsavedConfirm": { "title": "Discard unsaved changes?", "description": "The current edits have not been saved as a draft and cannot be recovered after closing.", "discard": "Discard changes" },
+      "rollbackConfirm": "Copy v{{version}} into a new version and publish it now?",
+      "messages": { "bound": "Plan profile updated", "deleted": "Profile deleted", "cloned": "Profile cloned as a draft", "draftSaved": "Draft saved without affecting active subscriptions", "published": "All six templates published atomically", "rolledBack": "Historical content published as a new version" }
+    },
     "group": {
       "title": "Permission Groups",
-      "description": "Manage all permission groups, including adding, deleting, and editing operations.",
+      "description": "Use permission groups as reusable node pools and manage their names and node membership centrally.",
       "columns": {
         "id": "Group ID",
         "name": "Group Name",
         "usersCount": "Users Count",
         "serverCount": "Nodes Count",
+        "plansCount": "Plans Count",
         "actions": "Actions"
       },
       "form": {
@@ -1705,6 +1725,15 @@
         "name": "Group Name",
         "namePlaceholder": "Please enter group name",
         "nameDescription": "Group name is used to identify different user groups, it's recommended to use meaningful names.",
+        "nodes": "Node pool members",
+        "nodesSearch": "Search node name, protocol, or tag...",
+        "noNodes": "No matching nodes",
+        "selected": "{{count}} nodes selected",
+        "added": "Add {{count}}",
+        "removed": "Remove {{count}}",
+        "affected": "This pool currently affects {{plans}} plans and {{users}} users.",
+        "emptyWarning": "I understand that clearing this pool removes all nodes from affected existing users.",
+        "emptyConfirmRequired": "Confirm the impact before clearing the node pool",
         "cancel": "Cancel",
         "editDescription": "Modify group information, changes will take effect immediately.",
         "createDescription": "Create a new permission group to assign different permissions to different users."
