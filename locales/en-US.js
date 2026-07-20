@@ -107,6 +107,10 @@
               "placeholder": "Example: 0.2 (represents 20%)",
               "description": "When user has an inviter, inviter reward = balance reward \xD7 this rate"
             },
+            "invite_balance": {
+              "label": "Fixed Inviter Balance",
+              "description": "Traffic has no monetary conversion rate; configure an explicit account balance reward"
+            },
             "balance": {
               "label": "Reward Balance (Yuan)",
               "short_label": "Balance",
@@ -371,7 +375,8 @@
         },
         "status_text": {
           "normal": "Normal",
-          "banned": "Banned"
+          "banned": "Banned",
+          "archived": "Archived"
         },
         "online_status": {
           "online": "Currently Online",
@@ -391,6 +396,8 @@
         },
         "actions_menu": {
           "edit": "Edit",
+          "subscriptions": "Manage subscriptions",
+          "restore": "Restore account",
           "view_details": "View Details",
           "assign_order": "Assign Order",
           "copy_url": "Copy Subscribe URL",
@@ -399,9 +406,74 @@
           "invites": "Invites",
           "traffic_records": "Traffic Records",
           "reset_traffic": "Reset Traffic",
-          "delete": "Delete",
-          "delete_confirm_title": "Confirm Delete User",
-          "delete_confirm_description": "This action will permanently delete user {{email}} and all associated data, including orders, coupons, traffic records, and support tickets. This action cannot be undone. Do you want to continue?"
+          "delete": "Archive account",
+          "delete_confirm_title": "Archive account",
+          "delete_confirm_description": "Archive {{email}} and stop all subscription access. Orders, subscriptions, financial and audit records are retained and the account can be restored through the admin API. Continue?"
+        }
+      },
+      "subscriptions": {
+        "title": "Account subscriptions",
+        "description": "Each subscription has an independent lifecycle, quota, and backend identity",
+        "grant": "Grant subscription",
+        "grant_description": "A newly granted subscription waits for first activation before continuous billing time begins.",
+        "empty": "This account has no subscription instances",
+        "default": "Default",
+        "confirm_cancel": "This subscription will stop immediately and cannot be resumed. Continue?",
+        "confirm_reset_security": "The previous subscription URL and UUID will stop working immediately. Continue?",
+        "activate_before": "Activate before {{time}}",
+        "no_deadline": "Pending without deadline",
+        "lifetime": "Lifetime",
+        "columns": {
+          "plan": "Plan / subscription ID",
+          "status": "Status",
+          "traffic": "Used / quota",
+          "activation": "Activation",
+          "expiry": "Expiry",
+          "source": "Source",
+          "actions": "Actions"
+        },
+        "status": {
+          "pending_activation": "Pending activation",
+          "active": "Active",
+          "suspended": "Suspended",
+          "cancelled": "Cancelled"
+        },
+        "source": {
+          "legacy": "Legacy migration",
+          "purchase": "Purchase",
+          "trial": "Trial",
+          "gift": "Gift",
+          "admin": "Admin grant",
+          "unknown": "Unknown"
+        },
+        "actions": {
+          "activate": "Activate",
+          "suspend": "Suspend",
+          "resume": "Resume",
+          "default": "Set as default",
+          "reset": "Reset this subscription's traffic",
+          "reset_security": "Reset this subscription's UUID and URL",
+          "cancel": "Cancel subscription"
+        },
+        "form": {
+          "plan": "Plan",
+          "select_plan": "Select a plan",
+          "duration_unit": "Duration unit",
+          "duration_value": "Duration",
+          "activate_now": "Activate now",
+          "activate_now_hint": "When disabled, timing waits for first user activation"
+        },
+        "duration": { "month": "Month", "day": "Day", "hour": "Hour", "lifetime": "Lifetime" },
+        "messages": {
+          "granted": "Subscription granted",
+          "activate": "Subscription activated",
+          "suspend": "Subscription suspended",
+          "resume": "Subscription resumed",
+          "default": "Default subscription updated",
+          "reset": "Subscription traffic reset",
+          "reset_security": "Subscription UUID and URL reset",
+          "cancel": "Subscription cancelled",
+          "restored": "Account restored"
         }
       },
       "filter": {
@@ -467,6 +539,7 @@
           "email_domain": "Domain",
           "password": "Password",
           "password_placeholder": "Leave empty to use email as password",
+          "subscription_management_hint": "After creating the account, grant plans through Manage subscriptions so pending or immediate activation is explicit.",
           "expire_time": "Expire Time",
           "expire_time_placeholder": "Select user expire date, leave empty for permanent",
           "permanent": "Permanent",
@@ -493,6 +566,7 @@
           "inviter_email_placeholder": "Please enter email",
           "password": "Password",
           "password_placeholder": "Enter new password if you want to change it",
+          "subscription_management_hint": "Plan, expiry, traffic, speed, device limits and credentials belong to a specific subscription. Use Manage subscriptions from the user actions menu.",
           "balance": "Balance",
           "balance_placeholder": "Please enter balance",
           "commission_balance": "Commission Balance",
@@ -878,6 +952,14 @@
               "yearly_first": "Yearly First Day",
               "yearly_reset": "Yearly Purchase Day"
             }
+          },
+          "activation_window": {
+            "title": "First activation window",
+            "description": "The purchase can first be activated within this window. Timing starts on first activation and then runs continuously.",
+            "unit": "Unit",
+            "value": "Window value",
+            "unlimited": "No first-activation deadline",
+            "units": { "month": "Month", "day": "Day", "hour": "Hour" }
           },
           "content": {
             "label": "Plan Description",

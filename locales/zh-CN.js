@@ -107,6 +107,10 @@
               "placeholder": "\u4F8B\u5982: 0.2 (\u4EE3\u886820%)",
               "description": "\u4F7F\u7528\u8005\u6709\u9080\u8BF7\u4EBA\u65F6\uFF0C\u7ED9\u9080\u8BF7\u4EBA\u7684\u5956\u52B1 = \u4F59\u989D\u5956\u52B1 * \u6B64\u6BD4\u4F8B"
             },
+            "invite_balance": {
+              "label": "\u9080\u8BF7\u4EBA\u56FA\u5B9A\u4F59\u989D\u5956\u52B1",
+              "description": "\u6D41\u91CF\u6CA1\u6709\u8D27\u5E01\u6362\u7B97\u5173\u7CFB\uFF1B\u9700\u8981\u5956\u52B1\u9080\u8BF7\u4EBA\u65F6\u8BF7\u663E\u5F0F\u586B\u5199\u8D26\u6237\u4F59\u989D"
+            },
             "balance": {
               "label": "\u5956\u52B1\u4F59\u989D (\u5143)",
               "short_label": "\u4F59\u989D",
@@ -371,7 +375,8 @@
         },
         "status_text": {
           "normal": "\u6B63\u5E38",
-          "banned": "\u5C01\u7981"
+          "banned": "\u5C01\u7981",
+          "archived": "\u5DF2\u5F52\u6863"
         },
         "online_status": {
           "online": "\u5F53\u524D\u5728\u7EBF",
@@ -391,6 +396,8 @@
         },
         "actions_menu": {
           "edit": "\u7F16\u8F91",
+          "subscriptions": "\u7BA1\u7406\u8BA2\u9605",
+          "restore": "\u6062\u590D\u8D26\u53F7",
           "view_details": "\u67E5\u770B\u8BE6\u60C5",
           "assign_order": "\u5206\u914D\u8BA2\u5355",
           "copy_url": "\u590D\u5236\u8BA2\u9605URL",
@@ -399,9 +406,74 @@
           "orders": "TA\u7684\u8BA2\u5355",
           "invites": "TA\u7684\u9080\u8BF7",
           "traffic_records": "TA\u7684\u6D41\u91CF\u8BB0\u5F55",
-          "delete": "\u5220\u9664",
-          "delete_confirm_title": "\u786E\u8BA4\u5220\u9664\u7528\u6237",
-          "delete_confirm_description": "\u6B64\u64CD\u4F5C\u5C06\u6C38\u4E45\u5220\u9664\u7528\u6237 {{email}} \u53CA\u5176\u6240\u6709\u76F8\u5173\u6570\u636E\uFF0C\u5305\u62EC\u8BA2\u5355\u3001\u4F18\u60E0\u7801\u3001\u6D41\u91CF\u8BB0\u5F55\u3001\u5DE5\u5355\u8BB0\u5F55\u7B49\u4FE1\u606F\u3002\u5220\u9664\u540E\u65E0\u6CD5\u6062\u590D\uFF0C\u662F\u5426\u7EE7\u7EED\uFF1F"
+          "delete": "\u5F52\u6863\u8D26\u53F7",
+          "delete_confirm_title": "\u786E\u8BA4\u5F52\u6863\u8D26\u53F7",
+          "delete_confirm_description": "\u5C06\u5F52\u6863\u8D26\u53F7 {{email}} \u5E76\u505C\u6B62\u5176\u5168\u90E8\u8BA2\u9605\u670D\u52A1\uFF1B\u8BA2\u5355\u3001\u8BA2\u9605\u3001\u8D22\u52A1\u548C\u5BA1\u8BA1\u8BB0\u5F55\u4F1A\u4FDD\u7559\uFF0C\u53EF\u901A\u8FC7\u7BA1\u7406\u63A5\u53E3\u6062\u590D\u3002\u662F\u5426\u7EE7\u7EED\uFF1F"
+        }
+      },
+      "subscriptions": {
+        "title": "\u8D26\u53F7\u8BA2\u9605\u7BA1\u7406",
+        "description": "\u6BCF\u6761\u8BA2\u9605\u62E5\u6709\u72EC\u7ACB\u751F\u547D\u5468\u671F\u3001\u6D41\u91CF\u548C\u540E\u7AEF\u8EAB\u4EFD",
+        "grant": "\u6388\u4E88\u8BA2\u9605",
+        "grant_description": "\u65B0\u6388\u4E88\u7684\u8BA2\u9605\u9ED8\u8BA4\u5904\u4E8E\u5F85\u6FC0\u6D3B\u72B6\u6001\uFF0C\u9996\u6B21\u6FC0\u6D3B\u540E\u624D\u5F00\u59CB\u8FDE\u7EED\u8BA1\u65F6\u3002",
+        "empty": "\u8BE5\u8D26\u53F7\u8FD8\u6CA1\u6709\u8BA2\u9605\u5B9E\u4F8B",
+        "default": "\u9ED8\u8BA4",
+        "confirm_cancel": "\u53D6\u6D88\u540E\u8BE5\u8BA2\u9605\u5C06\u7ACB\u5373\u505C\u6B62\u670D\u52A1\u4E14\u4E0D\u80FD\u6062\u590D\uFF0C\u786E\u5B9A\u7EE7\u7EED\u5417\uFF1F",
+        "confirm_reset_security": "\u91CD\u7F6E\u540E\u539F\u8BA2\u9605\u94FE\u63A5\u548C UUID \u5C06\u7ACB\u5373\u5931\u6548\uFF0C\u786E\u5B9A\u7EE7\u7EED\u5417\uFF1F",
+        "activate_before": "\u987B\u5728 {{time}} \u524D\u6FC0\u6D3B",
+        "no_deadline": "\u5F85\u6FC0\u6D3B\uFF08\u65E0\u671F\u9650\uFF09",
+        "lifetime": "\u957F\u671F\u6709\u6548",
+        "columns": {
+          "plan": "\u5957\u9910 / \u8BA2\u9605 ID",
+          "status": "\u72B6\u6001",
+          "traffic": "\u5DF2\u7528 / \u603B\u91CF",
+          "activation": "\u6FC0\u6D3B",
+          "expiry": "\u5230\u671F",
+          "source": "\u6765\u6E90",
+          "actions": "\u64CD\u4F5C"
+        },
+        "status": {
+          "pending_activation": "\u5F85\u6FC0\u6D3B",
+          "active": "\u751F\u6548\u4E2D",
+          "suspended": "\u5DF2\u6682\u505C",
+          "cancelled": "\u5DF2\u53D6\u6D88"
+        },
+        "source": {
+          "legacy": "\u65E7\u6570\u636E\u8FC1\u79FB",
+          "purchase": "\u7528\u6237\u8D2D\u4E70",
+          "trial": "\u8BD5\u7528",
+          "gift": "\u8D60\u9001",
+          "admin": "\u7BA1\u7406\u5458\u6388\u4E88",
+          "unknown": "\u672A\u77E5"
+        },
+        "actions": {
+          "activate": "\u6FC0\u6D3B",
+          "suspend": "\u6682\u505C",
+          "resume": "\u6062\u590D",
+          "default": "\u8BBE\u4E3A\u9ED8\u8BA4\u8BA2\u9605",
+          "reset": "\u91CD\u7F6E\u672C\u8BA2\u9605\u6D41\u91CF",
+          "reset_security": "\u91CD\u7F6E\u672C\u8BA2\u9605 UUID \u548C\u94FE\u63A5",
+          "cancel": "\u53D6\u6D88\u8BA2\u9605"
+        },
+        "form": {
+          "plan": "\u5957\u9910",
+          "select_plan": "\u9009\u62E9\u5957\u9910",
+          "duration_unit": "\u6709\u6548\u671F\u5355\u4F4D",
+          "duration_value": "\u6709\u6548\u671F",
+          "activate_now": "\u7ACB\u5373\u6FC0\u6D3B",
+          "activate_now_hint": "\u5173\u95ED\u65F6\u4E0D\u8BA1\u65F6\uFF0C\u7B49\u5F85\u7528\u6237\u9996\u6B21\u6FC0\u6D3B"
+        },
+        "duration": { "month": "\u6708", "day": "\u5929", "hour": "\u5C0F\u65F6", "lifetime": "\u957F\u671F\u6709\u6548" },
+        "messages": {
+          "granted": "\u8BA2\u9605\u5DF2\u6388\u4E88",
+          "activate": "\u8BA2\u9605\u5DF2\u6FC0\u6D3B",
+          "suspend": "\u8BA2\u9605\u5DF2\u6682\u505C",
+          "resume": "\u8BA2\u9605\u5DF2\u6062\u590D",
+          "default": "\u9ED8\u8BA4\u8BA2\u9605\u5DF2\u66F4\u65B0",
+          "reset": "\u8BE5\u8BA2\u9605\u6D41\u91CF\u5DF2\u91CD\u7F6E",
+          "reset_security": "\u8BA2\u9605 UUID \u548C\u94FE\u63A5\u5DF2\u91CD\u7F6E",
+          "cancel": "\u8BA2\u9605\u5DF2\u53D6\u6D88",
+          "restored": "\u8D26\u53F7\u5DF2\u6062\u590D"
         }
       },
       "filter": {
@@ -467,6 +539,7 @@
           "email_domain": "\u57DF",
           "password": "\u5BC6\u7801",
           "password_placeholder": "\u7559\u7A7A\u5219\u5BC6\u7801\u4E0E\u90AE\u4EF6\u76F8\u540C",
+          "subscription_management_hint": "\u8D26\u53F7\u521B\u5EFA\u540E\uFF0C\u8BF7\u4ECE\u7528\u6237\u64CD\u4F5C\u83DC\u5355\u8FDB\u5165\u201C\u7BA1\u7406\u8BA2\u9605\u201D\u6388\u4E88\u5957\u9910\uFF1B\u8FD9\u6837\u53EF\u4EE5\u660E\u786E\u9009\u62E9\u5F85\u6FC0\u6D3B\u6216\u7ACB\u5373\u6FC0\u6D3B\u3002",
           "expire_time": "\u5230\u671F\u65F6\u95F4",
           "expire_time_placeholder": "\u8BF7\u9009\u62E9\u7528\u6237\u5230\u671F\u65E5\u671F\uFF0C\u7559\u7A7A\u4E3A\u957F\u671F\u6709\u6548",
           "permanent": "\u957F\u671F\u6709\u6548",
@@ -493,6 +566,7 @@
           "inviter_email_placeholder": "\u8BF7\u8F93\u5165\u90AE\u7BB1",
           "password": "\u5BC6\u7801",
           "password_placeholder": "\u5982\u9700\u4FEE\u6539\u5BC6\u7801\u8BF7\u8F93\u5165",
+          "subscription_management_hint": "\u5957\u9910\u3001\u5230\u671F\u3001\u6D41\u91CF\u3001\u9650\u901F\u3001\u8BBE\u5907\u6570\u548C\u8BA2\u9605\u51ED\u636E\u5C5E\u4E8E\u5177\u4F53\u8BA2\u9605\uFF0C\u8BF7\u4ECE\u7528\u6237\u64CD\u4F5C\u83DC\u5355\u8FDB\u5165\u201C\u7BA1\u7406\u8BA2\u9605\u201D\u4FEE\u6539\u3002",
           "balance": "\u4F59\u989D",
           "balance_placeholder": "\u8BF7\u8F93\u5165\u4F59\u989D",
           "commission_balance": "\u4F63\u91D1\u4F59\u989D",
@@ -879,6 +953,14 @@
               "yearly_first": "\u6BCF\u5E74\u9996\u65E5",
               "yearly_reset": "\u6BCF\u5E74\u8D2D\u4E70\u65E5"
             }
+          },
+          "activation_window": {
+            "title": "\u9996\u6B21\u6FC0\u6D3B\u671F\u9650",
+            "description": "\u8D2D\u4E70\u540E\u5728\u6B64\u671F\u9650\u5185\u53EF\u9996\u6B21\u6FC0\u6D3B\uFF1B\u6FC0\u6D3B\u524D\u4E0D\u8BA1\u65F6\uFF0C\u9996\u6B21\u6FC0\u6D3B\u540E\u8FDE\u7EED\u8BA1\u65F6\u3002",
+            "unit": "\u5355\u4F4D",
+            "value": "\u671F\u9650\u6570\u503C",
+            "unlimited": "\u4E0D\u9650\u5236\u9996\u6B21\u6FC0\u6D3B\u65F6\u95F4",
+            "units": { "month": "\u6708", "day": "\u5929", "hour": "\u5C0F\u65F6" }
           },
           "content": {
             "label": "\u5957\u9910\u8BF4\u660E",
