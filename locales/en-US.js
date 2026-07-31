@@ -566,6 +566,7 @@
           "inviter_email_placeholder": "Please enter email",
           "password": "Password",
           "password_placeholder": "Enter new password if you want to change it",
+          "password_min_length": "Password must be at least 8 characters",
           "subscription_management_hint": "Plan, expiry, traffic, speed, device limits and credentials belong to a specific subscription. Use Manage subscriptions from the user actions menu.",
           "balance": "Balance",
           "balance_placeholder": "Please enter balance",
