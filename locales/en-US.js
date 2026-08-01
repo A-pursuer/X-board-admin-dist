@@ -192,6 +192,10 @@
             "title": "Confirm Delete",
             "description": "This action will permanently delete this template. Are you sure you want to continue?",
             "confirmText": "Delete"
+          },
+          "reenableConfirm": {
+            "title": "Re-enable a used coupon",
+            "description": "This coupon has already been used by an order. Re-enabling it makes it available to new orders again. Continue?"
           }
         }
       },
@@ -1551,8 +1555,10 @@
           "error": "Failed to send test email",
           "label_to": "To",
           "label_subject": "Subject",
+          "label_content": "Content",
           "placeholder_to": "user@example.com",
-          "placeholder_subject": "Test email subject"
+          "placeholder_subject": "Test email subject",
+          "placeholder_content": "Test email content"
         }
       },
       "telegram": {
@@ -2905,7 +2911,16 @@
           "label": "Subscription Periods",
           "placeholder": "Limit to specific subscription periods, leave empty for no restrictions",
           "description": "Select which subscription periods can use this coupon, leave empty for no period restrictions",
-          "empty": "No matching periods found"
+          "empty": "No matching periods found",
+          "options": {
+            "monthly": "Monthly",
+            "quarterly": "Quarterly",
+            "half_yearly": "Half-yearly",
+            "yearly": "Yearly",
+            "two_yearly": "Two-year",
+            "three_yearly": "Three-year",
+            "onetime": "One-time"
+          }
         },
         "limitPlan": {
           "label": "Subscription Plans",

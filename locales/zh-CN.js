@@ -192,6 +192,10 @@
             "title": "\u786E\u8BA4\u5220\u9664",
             "description": "\u6B64\u64CD\u4F5C\u5C06\u6C38\u4E45\u5220\u9664\u8BE5\u6A21\u677F\uFF0C\u786E\u5B9A\u8981\u7EE7\u7EED\u5417\uFF1F",
             "confirmText": "\u5220\u9664"
+          },
+          "reenableConfirm": {
+            "title": "\u91CD\u65B0\u542F\u7528\u5DF2\u4F7F\u7528\u4F18\u60E0\u5238",
+            "description": "\u8BE5\u4F18\u60E0\u5238\u5DF2\u88AB\u8BA2\u5355\u4F7F\u7528\u3002\u91CD\u65B0\u542F\u7528\u4F1A\u8BA9\u5176\u518D\u6B21\u53EF\u7528\u4E8E\u65B0\u8BA2\u5355\uFF0C\u662F\u5426\u786E\u8BA4\u7EE7\u7EED\uFF1F"
           }
         }
       },
@@ -1455,8 +1459,10 @@
           "error": "\u6D4B\u8BD5\u90AE\u4EF6\u53D1\u9001\u5931\u8D25",
           "label_to": "\u6536\u4EF6\u4EBA",
           "label_subject": "\u4E3B\u9898",
+          "label_content": "\u6B63\u6587",
           "placeholder_to": "user@example.com",
-          "placeholder_subject": "\u6D4B\u8BD5\u90AE\u4EF6\u4E3B\u9898"
+          "placeholder_subject": "\u6D4B\u8BD5\u90AE\u4EF6\u4E3B\u9898",
+          "placeholder_content": "\u6D4B\u8BD5\u90AE\u4EF6\u6B63\u6587"
         }
       },
       "telegram": {
@@ -2902,7 +2908,16 @@
           "label": "\u6307\u5B9A\u5468\u671F",
           "placeholder": "\u9650\u5236\u6307\u5B9A\u5468\u671F\u53EF\u4EE5\u4F7F\u7528\u4F18\u60E0\uFF0C\u7559\u7A7A\u5219\u4E0D\u9650\u5236",
           "description": "\u9009\u62E9\u53EF\u4EE5\u4F7F\u7528\u4F18\u60E0\u5238\u7684\u8BA2\u9605\u5468\u671F\uFF0C\u7559\u7A7A\u8868\u793A\u4E0D\u9650\u5236\u4F7F\u7528\u5468\u671F",
-          "empty": "\u6CA1\u6709\u627E\u5230\u5339\u914D\u7684\u5468\u671F"
+          "empty": "\u6CA1\u6709\u627E\u5230\u5339\u914D\u7684\u5468\u671F",
+          "options": {
+            "monthly": "\u6708\u4ED8",
+            "quarterly": "\u5B63\u4ED8",
+            "half_yearly": "\u534A\u5E74\u4ED8",
+            "yearly": "\u5E74\u4ED8",
+            "two_yearly": "\u4E24\u5E74\u4ED8",
+            "three_yearly": "\u4E09\u5E74\u4ED8",
+            "onetime": "\u4E00\u6B21\u6027"
+          }
         },
         "limitPlan": {
           "label": "\u6307\u5B9A\u8BA2\u9605",

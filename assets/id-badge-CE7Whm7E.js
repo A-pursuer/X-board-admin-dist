@@ -1,1 +1,0 @@
-import{p as e,r as t}from"./button-D19hjdbe.js";import{t as n}from"./badge-BgJQxEn4.js";var r=e();function i({id:e,compact:i=!1,className:a}){return i?(0,r.jsx)(n,{variant:`outline`,className:t(`whitespace-nowrap text-[10px] px-1 py-0 font-mono`,a),children:e}):(0,r.jsx)(n,{variant:`outline`,className:t(`whitespace-nowrap font-mono text-xs`,a),children:e})}export{i as t};
