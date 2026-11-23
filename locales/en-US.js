@@ -1,5 +1,30 @@
 (() => {
   const translations = {
+    "subscriptionLimits": {
+      "label": "Device limit",
+      "edit": "Edit device limit",
+      "unlimited": "Unlimited",
+      "hint": "Set per subscription. Each node counts online IPs separately. Leave empty or use 0 for unlimited.",
+      "invalid": "Enter a non-negative integer, or leave empty for unlimited.",
+      "saved": "Device limit saved",
+      "save": "Save"
+    },
+    "nodeHealth": {
+      "cpu": "CPU",
+      "memory": "Memory",
+      "disk": "Disk",
+      "swap": "Swap",
+      "load": "Node load",
+      "details": "Load details",
+      "noData": "No data",
+      "stale": "Stale data",
+      "updated": "Updated",
+      "heartbeat": "Last heartbeat",
+      "disabled": "Disabled",
+      "offline": "Offline",
+      "idle": "Online \xB7 no recent traffic report",
+      "online": "Online"
+    },
     "giftCard": {
       "title": "Gift Card Management",
       "description": "Manage gift card templates, redemption codes, and usage records.",
@@ -820,6 +845,7 @@
       }
     },
     "nav": {
+      "notificationDeliveries": "Notification deliveries",
       "dashboard": "Dashboard",
       "systemManagement": "System Management",
       "systemConfig": "System Configuration",

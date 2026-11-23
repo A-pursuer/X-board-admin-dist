@@ -1,5 +1,30 @@
 (() => {
   const translations = {
+    "subscriptionLimits": {
+      "label": "\u8BBE\u5907\u4E0A\u9650",
+      "edit": "\u4FEE\u6539\u8BBE\u5907\u4E0A\u9650",
+      "unlimited": "\u4E0D\u9650",
+      "hint": "\u6BCF\u6761\u8BA2\u9605\u72EC\u7ACB\u8BBE\u7F6E\uFF0C\u5404\u8282\u70B9\u5206\u522B\u6309\u5728\u7EBF IP \u8BA1\u6570\u3002\u7559\u7A7A\u6216\u586B 0 \u8868\u793A\u4E0D\u9650\u3002",
+      "invalid": "\u8BF7\u8F93\u5165\u975E\u8D1F\u6574\u6570\uFF0C\u6216\u7559\u7A7A\u8868\u793A\u4E0D\u9650\u3002",
+      "saved": "\u8BBE\u5907\u4E0A\u9650\u5DF2\u4FDD\u5B58",
+      "save": "\u4FDD\u5B58"
+    },
+    "nodeHealth": {
+      "cpu": "CPU",
+      "memory": "\u5185\u5B58",
+      "disk": "\u78C1\u76D8",
+      "swap": "\u4EA4\u6362\u533A",
+      "load": "\u8282\u70B9\u8D1F\u8F7D",
+      "details": "\u8D1F\u8F7D\u8BE6\u60C5",
+      "noData": "\u6682\u65E0\u6570\u636E",
+      "stale": "\u6570\u636E\u5DF2\u8FC7\u671F",
+      "updated": "\u66F4\u65B0\u65F6\u95F4",
+      "heartbeat": "\u6700\u8FD1\u5FC3\u8DF3",
+      "disabled": "\u5DF2\u505C\u7528",
+      "offline": "\u79BB\u7EBF",
+      "idle": "\u5728\u7EBF \xB7 \u6682\u65E0\u8FD1\u671F\u6D41\u91CF\u4E0A\u62A5",
+      "online": "\u5728\u7EBF"
+    },
     "giftCard": {
       "title": "\u793C\u54C1\u5361\u7BA1\u7406",
       "description": "\u5728\u8FD9\u91CC\u53EF\u4EE5\u7BA1\u7406\u793C\u54C1\u5361\u6A21\u677F\u3001\u5151\u6362\u7801\u548C\u4F7F\u7528\u8BB0\u5F55\u7B49\u529F\u80FD\u3002",
@@ -820,6 +845,7 @@
       }
     },
     "nav": {
+      "notificationDeliveries": "\u901A\u77E5\u6295\u9012\u8BB0\u5F55",
       "dashboard": "\u4EEA\u8868\u76D8",
       "systemManagement": "\u7CFB\u7EDF\u7BA1\u7406",
       "systemConfig": "\u7CFB\u7EDF\u914D\u7F6E",

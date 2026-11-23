@@ -1,0 +1,1 @@
+import{u as e}from"./api-RxQcn6Pc.js";e();function t(e=``){return e?`/${e.replace(/^\//,``)}`:`/`}export{t};
